@@ -44,7 +44,7 @@ export default function Experience() {
                     }`}
                   />
                   <div className={`text-sm font-bold ${active === i ? 'text-text' : 'text-text-2'}`}>
-                    {j.role.split(' — ')[0]}
+                    {j.role}
                   </div>
                   <div className="text-[11px] text-text-2 mt-0.5 truncate">{j.company}</div>
                   <div className="flex items-center gap-2 mt-1.5">

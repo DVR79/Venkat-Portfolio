@@ -1,7 +1,7 @@
 export const SITE = {
   name: 'D Venkataramana',
   shortName: 'DVR',
-  title: 'D Venkataramana — SEO Executive & Technical SEO Specialist',
+  title: 'D Venkataramana | SEO Executive & Technical SEO Specialist',
   description:
     'SEO Executive with 3+ years driving organic traffic, technical SEO & AI-powered growth for B2B and EdTech organizations.',
   keywords: 'SEO Executive, Technical SEO, Digital Marketing, AI Marketing, Bengaluru SEO Expert',
@@ -57,7 +57,7 @@ export const ABOUT_QUICK_INFO = [
   { icon: '💼', label: 'Current Role', value: 'SEO Executive' },
   { icon: '🏢', label: 'Company',      value: 'Invensis Technologies' },
   { icon: '📍', label: 'Location',     value: 'Bengaluru, Karnataka' },
-  { icon: '🎓', label: 'Education',    value: 'MBA — M.S. Ramaiah' },
+  { icon: '🎓', label: 'Education',    value: 'MBA, M.S. Ramaiah' },
   { icon: '🌐', label: 'Website',      value: 'digibrandbooster.tech', href: SITE.website },
 ];
 
@@ -71,23 +71,23 @@ export const EXPERTISE_PILLS = [
 export const EXPERIENCE = [
   {
     role: 'SEO Executive',
-    company: 'Invensis Technologies — Edstellar',
+    company: 'Invensis Technologies (Edstellar)',
     location: 'Bengaluru, India',
     date: 'Nov 2021 – Present',
     duration: '3+ years',
     current: true,
     summary:
-      'Owning end-to-end SEO strategy for Edstellar — a global corporate training marketplace serving Fortune 500 clients — across 200+ landing pages and 15+ content hubs.',
+      'Owning end-to-end SEO strategy for Edstellar, a global corporate training marketplace serving Fortune 500 clients, across 200+ landing pages and 15+ content hubs.',
     responsibilities: [
       'Led full-funnel SEO strategy aligned to quarterly revenue and pipeline targets',
       'Architected keyword cluster strategy mapping 500+ terms to topical authority hubs',
       'Executed deep technical audits across 200+ pages; shipped remediation roadmap in under 90 days',
-      'Optimized Core Web Vitals — improved Lighthouse score from 52 → 84 site-wide',
+      'Optimized Core Web Vitals: improved Lighthouse score from 52 to 84 site-wide',
       'Implemented JSON-LD schema (Course, Organization, BreadcrumbList) across all category pages',
       'Built executive SEO dashboards in Looker Studio surfacing rankings, traffic, and revenue attribution',
       'Operationalized AI-assisted content workflow (ChatGPT + Claude) tripling editorial output',
       'Partnered with engineering on site migrations, redirect maps, and pre-launch SEO QA',
-      'Managed off-page SEO — digital PR, guest posts, and high-authority backlink campaigns',
+      'Managed off-page SEO: digital PR, guest posts, and high-authority backlink campaigns',
       'Reported monthly KPI movements to leadership; translated SEO data into business decisions',
     ],
     achievements: [
@@ -101,17 +101,17 @@ export const EXPERIENCE = [
     tools: ['SEMrush','Ahrefs','Screaming Frog','GA4','GSC','GTM','Looker Studio','ChatGPT','Claude','Webflow'],
   },
   {
-    role: 'Digital Marketing Intern — SEO',
+    role: 'Digital Marketing Intern (SEO)',
     company: 'Digipuush',
     location: 'Bengaluru, India',
     date: 'Nov 2020 – Mar 2021',
     duration: '5 months',
     current: false,
     summary:
-      'Agency-side apprenticeship — supported SEO execution across 6+ client accounts spanning B2B SaaS, local services, and e-commerce.',
+      'Agency-side apprenticeship: supported SEO execution across 6+ client accounts spanning B2B SaaS, local services, and e-commerce.',
     responsibilities: [
       'Supported keyword research and content brief creation across multiple verticals',
-      'Assisted on-page optimization — meta tags, headers, internal linking, image SEO',
+      'Assisted on-page optimization: meta tags, headers, internal linking, image SEO',
       'Executed off-page tactics including outreach, citation building, and broken link recovery',
       'Performed competitor SERP-gap analysis informing client strategy decks',
       'Tracked rankings and traffic trends via GA & GSC; flagged anomalies for senior review',
@@ -161,10 +161,10 @@ export const FEATURED_PROJECT = {
   description:
     'Developed and implemented a comprehensive SEO strategy combining technical SEO, content optimization, competitor analysis, and keyword planning to improve search visibility and business performance for a leading EdTech platform.',
   steps: [
-    'Full technical audit — 200+ pages crawled, 80+ critical issues resolved',
-    'Keyword cluster architecture — mapped 500+ keywords to content pillars',
-    'AI content pipeline — 3× production output using ChatGPT & Claude',
-    'Core Web Vitals remediation — page speed improved from 52 to 84',
+    'Full technical audit: 200+ pages crawled, 80+ critical issues resolved',
+    'Keyword cluster architecture: mapped 500+ keywords to content pillars',
+    'AI content pipeline: 3x production output using ChatGPT & Claude',
+    'Core Web Vitals remediation: page speed improved from 52 to 84',
   ],
   metrics: [
     { val: '+35%', label: 'Organic Traffic Growth',    w: 75 },

@@ -118,7 +118,7 @@ export default function About() {
             <div>
               <div className="font-bold text-base mb-1.5">What makes me different?</div>
               <div className="text-sm text-text-2 leading-relaxed">
-                I don't just optimize for rankings — I connect SEO strategy directly to revenue impact.
+                I don't just optimize for rankings. I connect SEO strategy directly to revenue impact.
                 Every recommendation I make is backed by data, tied to a business goal, and measured against real KPIs.
               </div>
             </div>
