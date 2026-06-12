@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import { Inter, Sora } from 'next/font/google';
 import './globals.css';
 import SmoothScroll from '@/components/SmoothScroll';
-import CustomCursor from '@/components/CustomCursor';
 import ParticleBackground from '@/components/ParticleBackground';
 import ScrollProgress from '@/components/ScrollProgress';
 import { ThemeProvider } from '@/components/ThemeProvider';
@@ -50,7 +49,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <ThemeProvider>
           <ParticleBackground />
           <ScrollProgress />
-          <CustomCursor />
           <SmoothScroll>{children}</SmoothScroll>
         </ThemeProvider>
       </body>
