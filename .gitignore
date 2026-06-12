@@ -25,6 +25,3 @@ Thumbs.db
 .claude/
 
 .vercel
-
-# Local backup archive
-*.zip
