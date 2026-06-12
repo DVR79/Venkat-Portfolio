@@ -117,35 +117,37 @@ html:not(.dark) .glass {
 .no-scrollbar { scrollbar-width: none; }
 .no-scrollbar::-webkit-scrollbar { display: none; }
 
-/* Custom cursor — adapts to theme via primary var, no mix-blend in light */
+/* Custom cursor — glowing effect with smooth animation */
 .custom-cursor {
   position: fixed;
   top: 0; left: 0;
-  width: 12px; height: 12px;
-  background: rgb(var(--primary));
+  width: 16px; height: 16px;
+  background: linear-gradient(135deg, rgb(var(--primary)), rgb(var(--accent)));
   border-radius: 50%;
   pointer-events: none;
   z-index: 9999;
   transform: translate(-50%, -50%);
-  transition: width .2s, height .2s, background .2s;
+  transition: width .2s, height .2s, box-shadow .2s;
   will-change: transform;
+  box-shadow: 0 0 20px rgba(var(--primary), 0.6), 0 0 40px rgba(var(--primary), 0.3);
 }
-html.dark .custom-cursor { mix-blend-mode: difference; }
+html.dark .custom-cursor { mix-blend-mode: screen; }
 
 .custom-cursor-outline {
   position: fixed;
   top: 0; left: 0;
-  width: 38px; height: 38px;
-  border: 1.5px solid rgb(var(--primary) / 0.55);
+  width: 44px; height: 44px;
+  border: 2px solid rgb(var(--primary) / 0.6);
   border-radius: 50%;
   pointer-events: none;
   z-index: 9998;
   transform: translate(-50%, -50%);
   transition: width .25s, height .25s, border-color .25s, opacity .2s;
   will-change: transform;
+  box-shadow: 0 0 15px rgba(var(--primary), 0.2);
 }
-.custom-cursor.is-hovering { width: 48px; height: 48px; background: rgb(var(--accent) / 0.45); }
-.custom-cursor-outline.is-hovering { width: 0; height: 0; opacity: 0; }
+.custom-cursor.is-hovering { width: 56px; height: 56px; box-shadow: 0 0 30px rgba(var(--accent), 0.8), 0 0 60px rgba(var(--accent), 0.4); }
+.custom-cursor-outline.is-hovering { width: 8px; height: 8px; opacity: 1; border: none; background: rgb(var(--accent) / 0.6); }
 
 @media (max-width: 768px), (hover: none) {
   .custom-cursor, .custom-cursor-outline { display: none; }
