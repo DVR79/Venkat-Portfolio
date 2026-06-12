@@ -28,7 +28,7 @@ export const metadata: Metadata = {
 
 export const viewport = { width: 'device-width', initialScale: 1 };
 
-// Inline anti-flash script — runs before paint to set the right theme class
+// Inline anti-flash script - runs before paint to set the right theme class
 const themeScript = `
 (function(){
   try {
