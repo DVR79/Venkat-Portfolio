@@ -1,0 +1,201 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ═══════════════════════════════════════════════════
+   LIGHT THEME (default)
+═══════════════════════════════════════════════════ */
+:root {
+  --bg: 250 250 253;
+  --bg-alt: 243 244 250;
+  --surface: 255 255 255;
+  --card: 255 255 255;
+  --border: 15 23 42;        /* slate-900 — used at low alpha for borders/overlays */
+  --primary: 79 70 229;       /* indigo-600 */
+  --primary-d: 67 56 202;
+  --primary-l: 99 102 241;
+  --accent: 124 58 237;       /* violet-600 */
+  --green: 5 150 105;
+  --text: 15 23 42;
+  --text-2: 71 85 105;
+  --text-3: 130 140 160;
+  --shadow: 0 6px 28px -8px rgb(15 23 42 / 0.12);
+  --particle-color: 99, 102, 241;
+}
+
+/* ═══════════════════════════════════════════════════
+   DARK THEME
+═══════════════════════════════════════════════════ */
+html.dark {
+  --bg: 8 8 15;
+  --bg-alt: 13 13 26;
+  --surface: 17 17 32;
+  --card: 22 22 40;
+  --border: 255 255 255;
+  --primary: 99 102 241;
+  --primary-d: 79 82 200;
+  --primary-l: 129 140 248;
+  --accent: 139 92 246;
+  --green: 16 185 129;
+  --text: 240 240 248;
+  --text-2: 175 175 200;
+  --text-3: 120 120 150;
+  --shadow: 0 8px 30px -6px rgb(0 0 0 / 0.6);
+  --particle-color: 139, 92, 246;
+}
+
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+html { scroll-behavior: smooth; }
+html.lenis { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: clip; }
+
+html, body {
+  margin: 0; padding: 0;
+  background: rgb(var(--bg));
+  color: rgb(var(--text));
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-feature-settings: 'cv11', 'ss01';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  transition: background-color .4s ease, color .4s ease;
+}
+
+::selection { background: rgb(var(--primary) / 0.4); color: #fff; }
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: rgb(var(--bg)); }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(rgb(var(--primary)), rgb(var(--accent)));
+  border-radius: 10px;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, rgb(var(--primary)), rgb(var(--accent)), rgb(var(--primary-l)));
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradientShift 8s ease infinite;
+}
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50%      { background-position: 100% 50%; }
+}
+
+/* Glass card adapts per theme */
+.glass {
+  background: rgb(var(--card) / 0.6);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  border: 1px solid rgb(var(--border) / 0.08);
+}
+html.dark .glass { background: rgb(var(--card) / 0.6); }
+html:not(.dark) .glass {
+  background: rgb(255 255 255 / 0.75);
+  box-shadow: var(--shadow);
+}
+
+.glow-border {
+  position: relative;
+}
+.glow-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgb(var(--primary) / 0.55), rgb(var(--accent) / 0.55), transparent);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  pointer-events: none;
+}
+
+.no-scrollbar { scrollbar-width: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+
+/* Custom cursor — adapts to theme via primary var, no mix-blend in light */
+.custom-cursor {
+  position: fixed;
+  top: 0; left: 0;
+  width: 12px; height: 12px;
+  background: rgb(var(--primary));
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width .2s, height .2s, background .2s;
+  will-change: transform;
+}
+html.dark .custom-cursor { mix-blend-mode: difference; }
+
+.custom-cursor-outline {
+  position: fixed;
+  top: 0; left: 0;
+  width: 38px; height: 38px;
+  border: 1.5px solid rgb(var(--primary) / 0.55);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: width .25s, height .25s, border-color .25s, opacity .2s;
+  will-change: transform;
+}
+.custom-cursor.is-hovering { width: 48px; height: 48px; background: rgb(var(--accent) / 0.45); }
+.custom-cursor-outline.is-hovering { width: 0; height: 0; opacity: 0; }
+
+@media (max-width: 768px), (hover: none) {
+  .custom-cursor, .custom-cursor-outline { display: none; }
+}
+
+section { scroll-margin-top: 80px; }
+
+.link-underline { position: relative; display: inline-block; }
+.link-underline::after {
+  content: '';
+  position: absolute;
+  left: 0; bottom: -2px;
+  width: 100%; height: 1.5px;
+  background: linear-gradient(90deg, rgb(var(--primary)), rgb(var(--accent)));
+  transform: scaleX(0);
+  transform-origin: right center;
+  transition: transform .4s cubic-bezier(.65,.05,.36,1);
+}
+.link-underline:hover::after { transform: scaleX(1); transform-origin: left center; }
+
+.marquee-mask {
+  mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+}
+
+.bg-grid {
+  background-image:
+    linear-gradient(rgb(var(--border) / 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(var(--border) / 0.05) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+@keyframes barFill {
+  from { width: 0; }
+  to   { width: var(--w, 50%); }
+}
+.bar-fill { animation: barFill 1.6s cubic-bezier(.65,.05,.36,1) both; }
+
+/* Pretty radial spotlight that subtly differs per theme */
+.spotlight-bg {
+  background:
+    radial-gradient(circle at 30% 20%, rgb(var(--primary) / 0.12), transparent 50%),
+    radial-gradient(circle at 80% 80%, rgb(var(--accent) / 0.10), transparent 50%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
