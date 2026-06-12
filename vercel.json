@@ -1,6 +1,14 @@
 {
-  "buildCommand": "cd next-portfolio && npm run build",
-  "outputDirectory": "next-portfolio/.next",
-  "rootDirectory": ".",
-  "framework": "nextjs"
+  "builds": [
+    {
+      "src": "next-portfolio/package.json",
+      "use": "@vercel/next"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "next-portfolio/$1"
+    }
+  ]
 }
