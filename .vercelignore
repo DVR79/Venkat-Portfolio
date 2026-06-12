@@ -1,0 +1,8 @@
+.next
+node_modules
+.env.local
+.env.local.example
+backup_v1
+README.md
+.git
+.gitignore
